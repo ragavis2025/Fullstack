@@ -14,9 +14,9 @@ function Login() {
   });
   }
   const navigate=useNavigate();
- const formsubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({"Login Page",formData});
+    console.log("Login Page",formData);
     alert("Login Successfull");
     navigate("/dashboard",{
       state:formData
@@ -31,7 +31,7 @@ function Login() {
     <button type="submit" onClick={() => print()}>Submit</button>
     <button type="submit" onClick={console.log(email,password)}>Submit</button>
     */}
-    <form onSubmit={formsubmit}>
+    <form onSubmit={handleSubmit}>
       <input type="text" required placeholder="Enter your name" name="username" onChange={handleChange}/>
       <input type="password" required placeholder="Enter your password" name="password"  onChange={handleChange}/>
       <button type="submit">Submit</button>   
