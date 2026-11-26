@@ -1,8 +1,7 @@
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {useForm} from "react-hook-form";
-import { registerschema } from "../components/FormSchema/registerschema";
+import {registerschema} from "../components/FormSchema/registerschema";
 import {zodResolver} from "@hookform/resolvers/zod";
-
 function Register(){
     const navigate = useNavigate();
     const {register,handleSubmit,formState:{errors}}=useForm({
@@ -10,10 +9,10 @@ function Register(){
     })
     function onSubmit1(data){
         console.log(data)
-        alert("register success")
+        alert("registered successfully")
         navigate("/")
     }
-    return(
+return(
         <form onSubmit={handleSubmit(onSubmit1)}>
             <input type="text" required placeholder="Enter your name" {...register("name")}/>
             <p>{errors.name?.message}</p>
