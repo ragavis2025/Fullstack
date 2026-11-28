@@ -18,7 +18,9 @@ function Login() {
     const registerData = location.state;
     if(loginData.username===registerData.name && loginData.password===registerData.password){
       console.log("If condition success");
-      navigate("/dashboard");
+      navigate("/dashboard",{
+        state:loginData
+      });
     }else{
       console.log("Invalid Username or Password")
     }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import API from "../components/api";
 
 function Dashboard(){
     const location = useLocation();
@@ -15,9 +16,15 @@ function Dashboard(){
         console.log(userdata);
     },)
 
+    const checkendpoint = async ()=>{
+        const response = await API.get("/api/get")
+        console.log(response.data);
+    }
+
     return(
         <div>
-            <button onClick={setUserdata}>Button</button>
+            <button>Button1</button>
+            <button onClick={checkendpoint}>Button</button>
         </div>
     );
 }
